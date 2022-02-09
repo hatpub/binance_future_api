@@ -3,15 +3,16 @@ from datetime import datetime, timedelta
 import requests
 import json
 from apscheduler.schedulers.blocking import BlockingScheduler
+from data_config import *
 
 def exec_cron():
 
     db = pymysql.connect(
-        host='192.168.0.112',
-        user='sslee',
-        password='rhddbtjqj',
+        host=host,
+        user=user,
+        password=password,
         charset='utf8mb4',
-        database='sslee_DB'
+        database=database
     )
 
     url = 'https://fapi.binance.com/fapi/v1/ticker/24hr'
